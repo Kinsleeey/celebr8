@@ -30,7 +30,7 @@
     // TABS
     const rowObs=new IntersectionObserver(entries=>{
         entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');rowObs.unobserve(e.target);}});
-    },{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
+    },{ threshold: 0.1, rootMargin: '0px 0px 0px 0px' });
 
     document.querySelectorAll('.tab-btn').forEach(btn=>{
         btn.addEventListener('click',()=>{
