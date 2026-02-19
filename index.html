@@ -14,15 +14,12 @@
 
         <!-- NAV -->
         <nav id="main-nav">
-            <a href="#home" class="logo">
-                <span class="logo-main">CELEBR<span>8</span> LYFE</span>
-            </a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="#contact" class="nav-reserve">Reserve a Table</a>
+            <a href="https://www.instagram.com/celebr8lyfereserve?igsh=NjZoZmdheXZibDRm" target="_blank" rel="noopener noreferrer" class="btn-big reveal">Follow us</a>
             <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
@@ -30,10 +27,23 @@
 
         <!-- HERO — untouched -->
         <header class="hero" id="home">
+            <img class="hero-bg" src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=90&w=1920&auto=format&fit=crop" alt="">
+            <div class="hero-overlay"></div>
+
+            <!-- LEFT: logo -->
             <div class="hero-left">
+                <div class="hero-sip-row">
+                    <span>.Sip</span>
+                    <span>.Savour</span>
+                </div>
+                <img class="hero-logo" src="/image/Celebr8.png" alt="CELEBR8 LYFE">
+            </div>
+
+            <!-- RIGHT: tagline + CTA -->
+            <div class="hero-right">
                 <div class="hero-tag">Premium Drinks Bar</div>
-                <h1 class="hero-h1">Sip.<br>Savour.<br><em>Celebrate.</em></h1>
                 <p class="hero-body">Cocktails, mocktails, signature creations and fresh juices — every glass at CELEBR8 LYFE is a reason to raise a toast to the moment.</p>
+                <div class="hero-divider"></div>
                 <div class="hero-cta-row">
                     <a href="#menu" class="btn-primary">
                         <span>Explore the Menu</span>
@@ -42,10 +52,8 @@
                     <a href="#experience" class="btn-ghost">The Experience</a>
                 </div>
             </div>
-            <div class="hero-right">
-                <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=90&w=1920&auto=format&fit=crop" alt="CELEBR8 LYFE atmosphere">
-                <span class="hero-year">CELEBR8 LYFE ∙ Premium Bar</span>
-            </div>
+
+            <span class="hero-year">CELEBR8 LYFE ∙ Premium Bar</span>
         </header>
 
         <!-- MARQUEE -->
@@ -84,13 +92,24 @@
                 </nav>
             </div>
 
+            <div class="recipe-popup" id="recipe-popup" aria-modal="true" role="dialog">
+                <div class="recipe-popup-inner">
+                    <button class="recipe-close" id="recipe-close">✕</button>
+                    <div class="recipe-label">Recipe</div>
+                    <h3 class="recipe-title" id="recipe-title"></h3>
+                    <div class="recipe-divider"></div>
+                    <ul class="recipe-list" id="recipe-list"></ul>
+                </div>
+            </div>
+            <div class="recipe-backdrop" id="recipe-backdrop"></div>
+
             <!-- ──── COCKTAILS ──── -->
             <div class="tab-panel active" id="tab-cocktails">
                 <div class="drink-rows">
 
                     <article class="cocktail-card">
                         <div class="img-container">
-                            <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=1400&q=85" alt="Gin and Tonic">
+                            <img src="/image/gin.jpg" alt="Gin and Tonic">
                         </div>
                         <div class="text-container">
                             <span class="cocktail-number">01</span>
@@ -103,11 +122,11 @@
 
                     <article class="cocktail-card reverse">
                         <div class="img-container">
-                            <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=1400&q=85" alt="Old Fashioned">
+                            <img src="/image/of.jpg" alt="Old Fashioned">
                         </div>
                         <div class="text-container">
                             <span class="cocktail-number">02</span>
-                            <h3 class="cocktail-name">Old <em>Fashioned</em></h3>
+                            <h3 class="cocktail-name">Aged old <em>Fashion</em></h3>
                             <div class="cocktail-divider"></div>
                             <p class="cocktail-desc">Let's make it irresistible!. Experience the velvet smoothness of our 3-Month Aged Honey-Infused Old Fashion . Rich Scotch meets the subtle sweetness of infused honey, aged to perfection for a complex, luxurious twist on a classic. Bold, smooth, and utterly refined. Treat yourself to the art of slow-sipped perfection .</p>
                             <a href="#" class="btn-line">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M1 7H13M7 1l6 6-6 6"/></svg></a>
@@ -116,7 +135,7 @@
 
                     <article class="cocktail-card">
                         <div class="img-container">
-                            <img src="https://images.unsplash.com/photo-1560512823-829485b8bf24?w=1400&q=85" alt="Martini">
+                            <img src="/image/mtn.jpg" alt="Martini">
                         </div>
                         <div class="text-container">
                             <span class="cocktail-number">03</span>
@@ -129,7 +148,7 @@
 
                     <article class="cocktail-card reverse">
                         <div class="img-container">
-                            <img src="https://images.unsplash.com/photo-1560512823-829485b8bf24?w=1400&q=85" alt="Martini">
+                            <img src="/image/whiskysour.jpeg" alt="Martini">
                         </div>
                         <div class="text-container">
                             <span class="cocktail-number">04</span>
@@ -149,7 +168,7 @@
 
                     <article class="cocktail-card">
                         <div class="img-container">
-                            <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=1400&q=85" alt="Smoky Sunset">
+                            <img src="/image/lagoswater.jpeg" alt="Smoky Sunset">
                         </div>
                         <div class="text-container">
                             <span class="cocktail-number">01</span>
@@ -162,7 +181,7 @@
 
                     <article class="cocktail-card reverse">
                         <div class="img-container">
-                            <img src="https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=1400&q=85" alt="Smoky Sunset">
+                            <img src="/image/smokeysunset.jpeg" alt="Smoky Sunset">
                         </div>
                         <div class="text-container">
                             <span class="cocktail-number">02</span>
@@ -175,7 +194,7 @@
 
                     <article class="cocktail-card">
                         <div class="img-container">
-                            <img src="https://images.unsplash.com/photo-1609951651556-5334e2706168?w=1400&q=85" alt="Green Confetti">
+                            <img src="/image/greenconfetti.jpeg" alt="Green Confetti">
                         </div>
                         <div class="text-container">
                             <span class="cocktail-number">03</span>
@@ -188,7 +207,7 @@
 
                     <article class="cocktail-card reverse">
                         <div class="img-container">
-                            <img src="https://images.unsplash.com/photo-1546171753-97d7676e4602?w=1400&q=85" alt="Mango Margarita">
+                            <img src="/image/mangomagarita.jpeg" alt="Mango Margarita">
                         </div>
                         <div class="text-container">
                             <span class="cocktail-number">04</span>
@@ -208,7 +227,7 @@
 
                     <article class="cocktail-card">
                         <div class="img-container">
-                            <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=1400&q=85" alt="Mint Lemonade">
+                            <img src="/image/mintlemonade.jpeg" alt="Mint Lemonade">
                         </div>
                         <div class="text-container">
                             <span class="cocktail-number">01</span>
@@ -221,7 +240,7 @@
 
                     <article class="cocktail-card reverse">
                         <div class="img-container">
-                            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=1400&q=85" alt="Orange and Peach Ice Tea">
+                            <img src="/image/icetea.jpeg" alt="Orange and Peach Ice Tea">
                         </div>
                         <div class="text-container">
                             <span class="cocktail-number">02</span>
@@ -254,7 +273,7 @@
 
                     <article class="cocktail-card">
                         <div class="img-container">
-                            <img src="https://images.unsplash.com/photo-1589733955941-5eeaf752f6dd?w=1400&q=85" alt="Pineapple Juice">
+                            <img src="/image/pineapple.jpeg" alt="Pineapple Juice">
                         </div>
                         <div class="text-container">
                             <span class="cocktail-number">01</span>
@@ -267,7 +286,7 @@
 
                     <article class="cocktail-card reverse">
                         <div class="img-container">
-                            <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=1400&q=85" alt="Watermelon Juice">
+                            <img src="/image/watermelon.jpeg" alt="Watermelon Juice">
                         </div>
                         <div class="text-container">
                             <span class="cocktail-number">02</span>
@@ -286,12 +305,12 @@
         <!-- EXPERIENCE -->
         <section class="experience" id="experience">
             <div class="exp-image">
-                <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1200&q=80" alt="CELEBR8 LYFE Interior">
+                <img src="/image/d4c0a396-a37a-422f-a9bf-d19c572759a2.jpg" alt="CELEBR8 LYFE Interior">
             </div>
             <div class="exp-content reveal">
                 <div class="exp-stat-row">
                     <div class="exp-stat">
-                        <div class="exp-stat-num">14+</div>
+                        <div class="exp-stat-num">20+</div>
                         <div class="exp-stat-label">Drinks</div>
                     </div>
                     <div class="exp-stat">
@@ -303,31 +322,19 @@
                         <div class="exp-stat-label">Good Times</div>
                     </div>
                 </div>
-                <h2 class="exp-text">Where every glass is a reason to <em>celebrate life.</em></h2>
-                <p class="exp-body">CELEBR8 LYFE is more than a bar — it's a destination. Whether you're unwinding with a classic cocktail, toasting with a signature creation, or keeping it fresh with a mocktail, every sip is crafted to make the moment unforgettable.</p>
-                <a href="#contact" class="btn-primary" style="align-self:flex-start;">
-                    <span>Reserve Your Evening</span>
-                    <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M1 7H13M7 1l6 6-6 6"/></svg>
-                </a>
-                <div style="margin-top:64px;">
-                    <div class="section-label">Opening Hours</div>
-                    <div class="hours-grid">
-                        <div class="hours-cell"><div class="hours-day">Mon — Wed</div><div class="hours-time">5pm — 1am</div></div>
-                        <div class="hours-cell"><div class="hours-day">Thu — Fri</div><div class="hours-time">4pm — 3am</div></div>
-                        <div class="hours-cell"><div class="hours-day">Sat — Sun</div><div class="hours-time">2pm — 3am</div></div>
-                    </div>
-                </div>
+                <h2 class="exp-text">Where every glass is a reason to <em>celebr8 life.</em></h2>
+                <p class="exp-body">CELEBR8 LYFE is more than a bar — it's a destination. Whether you're unwinding with a classic cocktail, toasting with a signature creation, or keeping it fresh with a mocktail, every sip is crafted to make the moment unforgettable.</p>    
             </div>
         </section>
 
         <!-- FOOTER CTA -->
         <section class="footer-cta" id="contact">
             <div class="footer-cta-bg"></div>
-            <div class="footer-cta-eyebrow reveal">— Reserve Your Seat —</div>
-            <h2 class="footer-cta-title reveal">Tonight<br><em>is yours.</em></h2>
+            <div class="footer-cta-eyebrow reveal">— Celebr8 —</div>
+            <h2 class="footer-cta-title reveal">Lyfe<br><em>is yours.</em></h2>
             <div class="footer-cta-line"></div>
-            <a href="#" class="btn-big reveal">
-                <span>Book Your Table</span>
+            <a href="https://www.instagram.com/celebr8lyfereserve?igsh=NjZoZmdheXZibDRm" target="_blank" rel="noopener noreferrer" class="btn-big reveal">
+                <span>Follow us</span>
                 <svg width="15" height="15" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M1 7H13M7 1l6 6-6 6"/></svg>
             </a>
         </section>
