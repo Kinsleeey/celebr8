@@ -1,4 +1,6 @@
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --ink: #0d0b08;
@@ -505,6 +507,196 @@
 
         .reveal { opacity:0;transform:translateY(32px);transition:opacity 0.9s ease,transform 0.9s ease; }
         .reveal.visible { opacity:1;transform:none; }
+
+        /* ── COCKTAIL OF THE WEEK POPUP ── */
+        .cotw-backdrop {
+            position: fixed; inset: 0;
+            background: rgba(13,11,8,0.78);
+            backdrop-filter: blur(6px);
+            z-index: 9000;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+        .cotw-backdrop.open { opacity: 1; pointer-events: auto; }
+
+        .cotw-popup {
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -44%) scale(0.96);
+            z-index: 9001;
+            width: min(480px, calc(100vw - 40px));
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.23,1,0.32,1);
+        }
+        .cotw-popup.open {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .cotw-inner {
+            background: var(--ink);
+            border: 1px solid rgba(201,168,76,0.28);
+            padding: 52px 48px 44px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cotw-inner::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.09) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .cotw-inner::after {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .cotw-eyebrow {
+            display: flex; align-items: center; gap: 12px;
+            margin-bottom: 10px;
+        }
+        .cotw-line {
+            flex: 1; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201,168,76,0.45));
+        }
+        .cotw-eyebrow .cotw-line:last-child {
+            background: linear-gradient(90deg, rgba(201,168,76,0.45), transparent);
+        }
+        .cotw-label {
+            font-family: var(--font-mono);
+            font-size: 0.48rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--gold);
+            white-space: nowrap;
+        }
+
+        .cotw-week {
+            font-family: var(--font-mono);
+            font-size: 0.44rem;
+            letter-spacing: 0.3em;
+            color: rgba(245,239,230,0.3);
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 22px;
+        }
+        .cotw-img { width: 100%; height: 340px; overflow: hidden; margin-bottom: 28px; }
+        .cotw-img img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85) sepia(15%); }
+        .cotw-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.8rem, 6vw, 3.8rem);
+            font-weight: 300;
+            line-height: 1.05;
+            color: var(--cream);
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .cotw-title em { font-style: italic; color: var(--gold); }
+
+        .cotw-desc {
+            font-family: var(--font-serif);
+            font-size: 0.82rem;
+            line-height: 1.8;
+            color: rgba(245,239,230,0.6);
+            text-align: center;
+            font-weight: 300;
+            margin-bottom: 24px;
+        }
+
+        .cotw-divider {
+            width: 1px; height: 36px;
+            background: linear-gradient(to bottom, var(--gold), transparent);
+            margin: 0 auto 20px;
+        }
+
+        .cotw-ingredients-label {
+            font-family: var(--font-mono);
+            font-size: 0.44rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 14px;
+        }
+
+        .cotw-ingredients {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px 16px;
+            margin-bottom: 32px;
+        }
+        .cotw-ingredients li {
+            font-family: var(--font-serif);
+            font-size: 0.78rem;
+            color: rgba(245,239,230,0.65);
+            font-style: italic;
+            position: relative;
+            padding-left: 12px;
+        }
+        .cotw-ingredients li::before {
+            content: '';
+            position: absolute; left: 0; top: 0.55em;
+            width: 4px; height: 4px;
+            border-radius: 50%;
+            background: var(--gold);
+            opacity: 0.55;
+        }
+
+        .cotw-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--ink);
+            background: var(--gold);
+            border: none;
+            padding: 16px 32px;
+            cursor: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        .cotw-cta::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: var(--cream);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.45s cubic-bezier(0.77,0,0.175,1);
+        }
+        .cotw-cta:hover::before { transform: scaleX(1); transform-origin: left; }
+        .cotw-cta span, .cotw-cta svg { position: relative; z-index: 1; }
+
+        .cotw-close {
+            position: absolute;
+            top: 16px; right: 18px;
+            background: none; border: none;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: rgba(245,239,230,0.35);
+            cursor: none;
+            transition: color 0.3s;
+            line-height: 1;
+            padding: 4px;
+        }
+        .cotw-close:hover { color: var(--gold); }
+
+        @media (max-width: 768px) {
+            .cotw-cta { cursor: pointer; }
+            .cotw-close { cursor: pointer; }
+            .cotw-inner { padding: 44px 28px 36px; }
+            .cotw-title { font-size: 2.4rem; }
+        }
 
         /* ── RESPONSIVE ── */
         @media (max-width:1100px) {

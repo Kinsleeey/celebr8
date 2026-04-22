@@ -98,7 +98,6 @@
         closeBtn.addEventListener('click', closePopup);
         backdrop.addEventListener('click', closePopup);
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closePopup(); });
-
         document.querySelectorAll('.btn-line').forEach(btn => {
             btn.addEventListener('click', e => {
                 e.preventDefault();
@@ -107,6 +106,50 @@
                 openPopup(name);
             });
         });
+
+        // COCKTAIL OF THE WEEK POPUP
+        (function() {
+            const cotwPopup    = document.getElementById('cotw-popup');
+            const cotwBackdrop = document.getElementById('cotw-backdrop');
+            const cotwClose    = document.getElementById('cotw-close');
+            const cotwCta      = document.getElementById('cotw-cta');
+            const cotwWeekEl   = document.getElementById('cotw-week');
+
+            
+
+            function openCotw() {
+                cotwPopup.classList.add('open');
+                cotwBackdrop.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeCotw() {
+                cotwPopup.classList.remove('open');
+                cotwBackdrop.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+
+            // Show on every page load
+            setTimeout(openCotw, 1000);
+
+            cotwClose.addEventListener('click', closeCotw);
+            cotwBackdrop.addEventListener('click', closeCotw);
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCotw(); });
+
+            // CTA scrolls to menu and closes popup
+            cotwCta.addEventListener('click', () => {
+                closeCotw();
+                document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            // Add to cursor hover listeners
+            [cotwClose, cotwCta].forEach(el => {
+                el.addEventListener('mouseenter', () => ring && ring.classList.add('hover'));
+                el.addEventListener('mouseleave', () => ring && ring.classList.remove('hover'));
+            });
+        })();
+
+        
+
     
 
 

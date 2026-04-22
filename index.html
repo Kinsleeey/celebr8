@@ -90,6 +90,7 @@
                     <button class="tab-btn" data-tab="signature">Signature Cocktails</button>
                     <button class="tab-btn" data-tab="mocktails">Mocktails</button>
                     <button class="tab-btn" data-tab="juices">Fresh Fruit Juices</button>
+                    <button class="tab-btn" data-tab="beer">Beer</button>
                 </nav>
             </div>
 
@@ -488,6 +489,38 @@
                 </div>
             </div>
 
+            <!-- ──── BEER ──── -->
+            <div class="tab-panel" id="tab-beer">
+                <div class="drink-rows">
+
+                    <article class="cocktail-card">
+                        <div class="img-container">
+                            <img src="/image/desperado.jpeg" alt="desperado">
+                        </div>
+                        <div class="text-container">
+                            <span class="cocktail-number">01</span>
+                            <h3 class="cocktail-name">Desperado</h3>
+                            <div class="cocktail-divider"></div>
+                            <p class="cocktail-desc">A distinctive lager infused with tequila flavor. It has a light, crisp body with a subtle citrus sweetness and a smooth, refreshing finish—ideal for a laid-back, vibrant drinking experience.</p>
+                        </div>
+                    </article>
+
+                    <article class="cocktail-card reverse">
+                        <div class="img-container">
+                            <img src="/image/guinness.jpeg" alt="guinness" loading="lazy">
+                        </div>
+                        <div class="text-container">
+                            <span class="cocktail-number">02</span>
+                            <h3 class="cocktail-name">Guinness</h3>
+                            <div class="cocktail-divider"></div>
+                            <p class="cocktail-desc">A classic Irish stout known for its deep black color and creamy head. It delivers a smooth, balanced taste with notes of roasted barley, coffee, and a slight bitterness, making it a rich yet easy-to-drink choice.</p>
+                        </div>
+                    </article>
+
+
+                </div>
+            </div>
+
         </section>
 
         <!-- EXPERIENCE -->
@@ -536,6 +569,37 @@
                 
             </div>
         </footer>
+
+        <!-- COCKTAIL OF THE WEEK POPUP -->
+        <div class="cotw-backdrop" id="cotw-backdrop"></div>
+        <div class="cotw-popup" id="cotw-popup" aria-modal="true" role="dialog" aria-label="Cocktail of the Week">
+            <div class="cotw-inner">
+                
+                <div class="cotw-eyebrow">
+                    <span class="cotw-line"></span>
+                    <span class="cotw-label">Cocktail of the Week</span>
+                    <span class="cotw-line"></span>
+                </div>
+                <div class="cotw-week" id="cotw-week"></div>
+                <div class="cotw-img">
+                    <img src="/image/lagoswater.jpeg" alt="Lagos Waters">
+                </div>
+                <h2 class="cotw-title">Lagos<em>Waters</em></h2>
+                <p class="cotw-desc">Love it!. Lagos Waters A taste of the lagoon in every sip: crisp gin, zesty lemongrass,Exotic freshness of sour sop and a tangy twist inspired by Lagos' vibrant shores. Refreshing, tropical, and totally Vibin. Sip, relax, and ride the waves</p>
+                
+                <div class="cotw-ingredients-label">Recipee</div>
+                <ul class="cotw-ingredients">
+                        <li>Tanqueray</li>
+                        <li>Soursop puree</li>
+                        <li>Lemongrass liqueur</li>
+                        <li>Lemon juice</li>
+                        <li>Splash of lemon soda</li>
+                </ul>
+                
+                <button class="cotw-close" id="cotw-close" aria-label="Close">✕</button>
+            </div>
+        </div>
+
         <script src="script.js"></script>
     </body>
 </html>
